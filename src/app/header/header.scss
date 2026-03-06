@@ -1,0 +1,119 @@
+$primary-color: #242439;
+$secondary-color: #22222d;
+$accent-color: #f4cb00;
+$text-color: #555555;
+$font-heading: "Poppins", sans-serif;
+$font-body: "Open Sans", sans-serif;
+$padding-large: 50px;
+$padding-medium: 71px;
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.photo {
+  width: 86.5%;
+  height: 100%;
+  object-fit: cover;
+  float: right;
+  margin-left: $padding-medium;
+}
+
+.head-p {
+  padding-left: $padding-large;
+  padding-top: 90px;
+
+  .yellow-line {
+    width: 35px;
+    height: 4px;
+    background-color: $accent-color;
+    margin: 20px 0;
+  }
+
+  .text-11, .text-12 {
+    font-size: 60px;
+    letter-spacing: 5px;
+    color: $primary-color;
+  }
+
+  .text-11 { font-weight: 700; }
+  .text-12 { font-weight: 300; padding-left: 10px; }
+
+  .text-13 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: $secondary-color;
+    font-weight: 600;
+    padding-top: 30px;
+
+  }
+
+  .text-14 {
+    font-size: 25px;
+    color: $text-color;
+
+  }
+
+  .text-15 {
+    font-size: 25px;
+    color: #1b1c1e;
+    font-weight: 400;
+    background-color: $accent-color;
+    border-radius: 6px;
+    padding: 0px 5px;
+    display: inline-block;
+  }
+}
+
+.container {
+  @include flex-center;
+  flex-direction: column;
+}
+
+
+@media (max-width: 1400px) {
+  .photo { width: 89%; margin-left: 57px; }
+  .head-p { padding-left: 40px; padding-top: 50px; }
+  .head-p .text-11, .head-p .text-12 { font-size: 50px; }
+  .head-p .text-13 { font-size: 25px; }
+  .head-p .text-14, .head-p .text-15 { font-size: 18px; }
+}
+
+@media (max-width: 1200px) {
+  .photo { width: 89%; margin-left: 50px; }
+  .head-p { padding-left: 40px; padding-top: 50px; }
+  .head-p .text-11, .head-p .text-12 { font-size: 50px; }
+  .head-p .text-13 { font-size: 25px; }
+  .head-p .text-14, .head-p .text-15 { font-size: 18px; }
+}
+
+
+@media (max-width: 992px) {
+  .photo { width: 100%; margin-left: 0; }
+  .head-p { padding-left: 45px; padding-top: 40px; padding-bottom: 30px; }
+  .head-p .text-11, .head-p .text-12 { font-size: 45px; }
+  .head-p .text-13 { font-size: 22px; }
+  .head-p .text-14, .head-p .text-15 { font-size: 16px; }
+}
+
+
+@media (max-width: 640px) {
+  .photo { width: 100%; margin-left: 0; }
+  .head-p { padding-left: 40px; padding-top: 30px; padding-bottom: 30px; }
+  .head-p .text-11, .head-p .text-12 { font-size: 35px; }
+  .head-p .text-13 { font-size: 20px; }
+  .head-p .text-14, .head-p .text-15 { font-size: 14px; }
+}
+
+
+@media (max-width: 480px) {
+  .photo { width: 100%; margin-left: 0; }
+  .head-p { padding-left: 38px; padding-top: 20px; padding-bottom: 30px; }
+  .head-p .text-11, .head-p .text-12 { font-size: 28px; }
+  .head-p .text-13 { font-size: 18px; }
+  .head-p .text-14, .head-p .text-15 { font-size: 12px; }
+}

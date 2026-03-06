@@ -1,0 +1,57 @@
+<div class="row px-0 head-wrapper">
+    <div class="col-5 px-0">
+        <img src="img/image.png"  alt="" class="photo">
+        
+    </div>
+    <div class="col-7 px-0">
+        <div class="head-p">
+
+            @if (isLoggedIn) {
+                <h2><strong class="text-11">{{name}}</strong><span class="text-12">{{surname}}</span></h2>
+            }
+            @else {
+                <h1>No data</h1>
+            }
+            
+
+            @if (isLoggedIn) {
+                <div class="text-15">
+                    @for (prof of professions; track prof; let isLast = $last){
+                        {{ prof }}
+
+                        @if (!isLast) {
+                            & 
+                        }
+                    }
+                </div>
+            }
+            @else {
+                <h1>No data</h1>
+            }
+
+            <br>
+            <br>
+            <br>
+            @if (isLoggedIn) {
+                <div class="text-13">{{note}}</div>
+            }
+            @else {
+                <h1>No data</h1>
+            }
+         
+            <div class="yellow-line"></div>
+
+            
+            @if (isLoggedIn) {
+                <div class="text-14">
+                    {{someinfo1}} <br>
+                    {{someinfo2}} <br>
+                    {{someinfo3}}
+                </div>
+            }
+            @else {
+                <h1>No data</h1>
+            }
+        </div>
+    </div>
+</div>
