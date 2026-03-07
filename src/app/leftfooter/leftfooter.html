@@ -1,17 +1,52 @@
 <div class="left-bg">
     <div>
-        <span class="text-1">EDUCATION</span>
+
+        @if (idk1) {
+            <span class="text-1">{{title1}}</span>
+        }
+        @else{
+            <h1>No data</h1>
+        }
+
         <div class="yellow-line"></div>
         <div>
-            <div class="text-2">ENTER YOUR MAJOR</div>
-            <div class="text-3">Name Of Your University</div>
-            <div class="text-4">2005-2009</div>
+
+            @if (idk1) {
+                <div class="text-2">{{text1}}</div>
+                <div class="text-3">{{text2}}</div>
+            }
+            @else {
+                <h1>No data</h1>
+            }
+
+
+            @if (idk1) {
+                 <div class="text-4">{{years1}}</div>
+            }
+            @else {
+                <h1>No data</h1>
+            }
+
         </div>
         <br>
         <div>
-            <div class="text-2">ENTER YOUR MAJOR</div>
-            <div class="text-3">Name Of Your University</div>
-            <div class="text-4">2009-2011</div>
+
+            @if (idk1) {
+                <div class="text-2">{{text1}}</div>
+                <div class="text-3">{{text2}}</div>
+            }
+            @else {
+                <h1>No data</h1>
+            }
+
+
+             @if (idk1) {
+                 <div class="text-4">{{years2}}</div>
+            }
+            @else {
+                <h1>No data</h1>
+            }
+
         </div>
     </div>
     <br>
@@ -19,28 +54,25 @@
     <br>
     <br>
     <div>
-        <span class="text-1">EXPERTISE</span>
+
+        @if (idk2) {
+            <span class="text-1">{{title2}}</span>
+        }
+        @else {
+            <h1>No data</h1>
+        }
+
         <div class="yellow-line"></div>
-        <div class="EXPERTISE">
-            <label>Photoshop</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
-        <div class="EXPERTISE">
-            <label>Illustrator</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
-        <div class="EXPERTISE">
-            <label>Indesign</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
-        <div class="EXPERTISE">
-            <label>Word</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
-        <div class="EXPERTISE">
-            <label>Power Point</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
+
+        @if (idk2) {
+            @for (skill of skills; track skill){
+                <div class="EXPERTISE">
+                    <label>{{skill}}</label>
+                    <input type="range" min="0" max="100" value="50" class="slider" disabled>
+                 </div>
+            }
+        }
+
     </div>
     <br>
     <br>
@@ -50,19 +82,20 @@
             <div class="icon"><i class="fas fa-envelope"></i></div>
             <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
         </div>
-        <div class="info">
-            <div class="item">
-                <h4>PHONE</h4>
-                <p>+000 123 456 789</p>
+
+
+        @if (idk3) {
+            <div class="info">
+
+                @for (item of info; track item.title) {
+                    <div class="item">
+                        <h4>{{ item.title }}</h4>
+                        <p>{{ item.value }}</p>
+                    </div>
+                }
+
             </div>
-            <div class="item">
-                <h4>EMAIL</h4>
-                <p>urname@gmail.com</p>
-            </div>
-            <div class="item">
-                <h4>AREA</h4>
-                <p>Your Street Address Here</p>
-            </div>
-        </div>
+        }
+
     </div>
 </div>
