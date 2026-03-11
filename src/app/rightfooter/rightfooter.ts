@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-rightfooter',
-  imports: [],
+  imports: [CommonModule],
+  standalone: true,
   templateUrl: './rightfooter.html',
   styleUrl: './rightfooter.scss',
 })
@@ -30,5 +32,15 @@ export class Rightfooter {
   { name: "Writing", icon: "fas fa-pen-nib" },
   { name: "Chess", icon: "fas fa-chess" }
 ];
+
+  @Input() showExperience: boolean = false;
+
+  @Output() toggleExperience = new EventEmitter<void>();
+
+  onArrowClick() {
+    console.log("CLICK WORKS");
+    this.toggleExperience.emit();
+ 
+  }
 
 }

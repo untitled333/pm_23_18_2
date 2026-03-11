@@ -13,4 +13,12 @@ import {Rightfooter} from './rightfooter/rightfooter';
   styleUrl: './app.scss'
 })
 export class App {
+
+  showExperience = false;
+
+  toggleExperience() {
+    console.log("APP TOGGLE");
+    this.showExperience = !this.showExperience;
+  }
+
 }

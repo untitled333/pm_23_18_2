@@ -79,14 +79,14 @@ $padding-top: 80px;
       flex: 0 0 clamp(80px, 15%, 80px);
       background-color: $accent-color;
       width: clamp(80px, 15%, 80px);
-      height: clamp(340px, 55%, 400px);
+      
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       gap: clamp(3px, 1vw, 5px);
-
-
+      align-self: stretch;
+      margin-bottom: -20px;
       .icon {
         font-size: clamp(16px, 2.5vw, 28px);
         color: black;

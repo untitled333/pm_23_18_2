@@ -65,6 +65,28 @@ $padding-top-lg: 80px;
     color: $text-white;
   }
 
+  i.arrow {
+    padding-left: 12px;
+    margin-right: 10px;
+    font-size: 25px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    color: $text-white;
+    margin-left: 280px;
+  }
+
+  i.arrow.rotated {
+    transform: rotate(90deg);
+  }
+
+  .content-block {
+    transition: max-height 0.5s ease;
+  }
+
+  .content-block.show {
+    max-height: 1000px;
+  }
+
   .icons-container {
     @include flex-center(row, flex-start, center);
     gap: 80px;

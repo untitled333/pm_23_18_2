@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './leftfooter.scss',
 })
 export class Leftfooter {
-  
+
   idk1: boolean = true;
   
   title1: string = "EDUCATION";
