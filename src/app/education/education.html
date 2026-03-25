@@ -1,0 +1,29 @@
+<div>
+  @if (isVisible) {
+    <span class="text-1">{{ title }}</span>
+  } @else {
+    <h1>No data</h1>
+  }
+
+  <div class="yellow-line"></div>
+
+  
+  <div>
+    @if (isVisible) {
+      <div class="text-2">{{ major }}</div>
+      <div class="text-3">{{ university }}</div>
+      <div class="text-4">{{ years1 }}</div>
+    }
+  </div>
+
+  <br>
+
+ 
+  <div>
+    @if (isVisible) {
+      <div class="text-2">{{ major }}</div>
+      <div class="text-3">{{ university }}</div>
+      <div class="text-4">{{ years2 }}</div>
+    }
+  </div>
+</div>

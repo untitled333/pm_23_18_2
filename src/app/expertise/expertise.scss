@@ -1,0 +1,33 @@
+.text-1 {
+  font-size: clamp(20px, 3vw, 35px);
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.yellow-line {
+  width: 35px;
+  height: 4px;
+  background-color: #ffca05;
+  margin: 20px 0;
+}
+
+.EXPERTISE {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 35px);
+  margin-bottom: 28px;
+
+  label {
+    width: clamp(150px, 20%, 170px);
+    font-size: clamp(14px, 2vw, 21px);
+    color: white;
+    font-weight: 600;
+  }
+}
+
+.slider {
+  appearance: none;
+  width: 35%;
+  height: 5px;
+  background: linear-gradient(to right, #ffca05 50%, #5d5d6a 50%);
+}

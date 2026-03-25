@@ -1,0 +1,22 @@
+<div class="contact-card">
+
+  <div class="left-bar">
+    <div class="icon"><i class="fas fa-phone"></i></div>
+    <div class="icon"><i class="fas fa-envelope"></i></div>
+    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+  </div>
+
+  @if (isVisible) {
+    <div class="info">
+
+      @for (item of info; track item.title) {
+        <div class="item">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.value }}</p>
+        </div>
+      }
+
+    </div>
+  }
+
+</div>

@@ -6,52 +6,23 @@
     <div class="col-7 px-0">
         <div class="head-p">
 
-            @if (isLoggedIn) {
-                <h2><strong class="text-11">{{name}}</strong><span class="text-12">{{surname}}</span></h2>
-            }
-            @else {
-                <h1>No data</h1>
-            }
-            
-
-            @if (isLoggedIn) {
-                <div class="text-15">
-                    @for (prof of professions; track prof; let isLast = $last){
-                        {{ prof }}
-
-                        @if (!isLast) {
-                            & 
-                        }
-                    }
-                </div>
-            }
-            @else {
-                <h1>No data</h1>
-            }
+        <app-name
+         [isLoggedIn]="isLoggedIn"
+         [name]="name"
+         [surname]="surname"
+         [professions]="professions">
+        </app-name>
 
             <br>
             <br>
             <br>
-            @if (isLoggedIn) {
-                <div class="text-13">{{note}}</div>
-            }
-            @else {
-                <h1>No data</h1>
-            }
-         
-            <div class="yellow-line"></div>
-
-            
-            @if (isLoggedIn) {
-                <div class="text-14">
-                    {{someinfo1}} <br>
-                    {{someinfo2}} <br>
-                    {{someinfo3}}
-                </div>
-            }
-            @else {
-                <h1>No data</h1>
-            }
+            <app-user-profile
+                [isLoggedIn]="isLoggedIn"
+                [note]="note"
+                [someinfo1]="someinfo1"
+                [someinfo2]="someinfo2"
+                [someinfo3]="someinfo3">
+            </app-user-profile>
         </div>
     </div>
 </div>

@@ -50,48 +50,19 @@
     <br>
     <br>
 
-    @if (showReferences) {
-
-    <div>
-        <span class="text-5">REFERENCE</span>
-        <div class="yellow-line"></div>
-
-        <div class="row">
-            @for (ref of references; track ref.name) {
-                <div class="col-6">
-                    <div class="text-6">{{ ref.name }}</div>
-                    <div class="text-9">{{ ref.position }}</div>
-                    <div class="text-9">Phone: {{ ref.phone }}</div>
-                </div>
-            }
-        </div>
-
-    </div>
-    }
-
-    @else {
-        <h1>No data</h1>
-    }
+      <app-reference
+        [isVisible]="showReferences"
+        [references]="references">
+      </app-reference>
 
     <br>
     <br>
     <br>
-    @if (showInterests) {
+    
+  <app-interests
+    [isVisible]="showInterests"
+    [interests]="interests">
+  </app-interests>
 
-    <div>
-        <span class="text-5">INTERESTS</span>
-        <div class="yellow-line"></div>
-
-        <div class="icons-container">
-            @for (interest of interests; track interest.name) {
-                <div class="icon-block">
-                    <i [class]="interest.icon"></i>
-                    <span>{{ interest.name }}</span>
-                </div>
-            }
-        </div>
-
-    </div>
-    }
     
 </div>

@@ -20,5 +20,4 @@ export class App {
     console.log("APP TOGGLE");
     this.showExperience = !this.showExperience;
   }
-
 }

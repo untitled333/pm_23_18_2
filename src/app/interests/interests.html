@@ -1,0 +1,18 @@
+@if (isVisible) {
+
+<div>
+  <span class="text-5">INTERESTS</span>
+  <div class="yellow-line"></div>
+
+  <div class="icons-container">
+    @for (interest of interests; track interest.name) {
+      <div class="icon-block">
+        <i [class]="interest.icon"></i>
+        <span>{{ interest.name }}</span>
+      </div>
+    }
+  </div>
+
+</div>
+
+}

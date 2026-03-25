@@ -27,12 +27,6 @@ $padding-medium: 71px;
   padding-left: $padding-large;
   padding-top: 90px;
 
-  .yellow-line {
-    width: 35px;
-    height: 4px;
-    background-color: $accent-color;
-    margin: 20px 0;
-  }
 
   .text-11, .text-12 {
     font-size: 60px;
@@ -43,20 +37,6 @@ $padding-medium: 71px;
   .text-11 { font-weight: 700; }
   .text-12 { font-weight: 300; padding-left: 10px; }
 
-  .text-13 {
-    font-size: 30px;
-    text-transform: uppercase;
-    color: $secondary-color;
-    font-weight: 600;
-    padding-top: 30px;
-
-  }
-
-  .text-14 {
-    font-size: 25px;
-    color: $text-color;
-
-  }
 
   .text-15 {
     font-size: 25px;

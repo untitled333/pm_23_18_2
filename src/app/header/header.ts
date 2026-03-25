@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { UserProfile } from '../user-profile/user-profile';
+import { NameComponent } from '../name/name';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [UserProfile, NameComponent],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

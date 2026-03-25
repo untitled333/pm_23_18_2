@@ -21,17 +21,6 @@ $padding-top: 80px;
   padding-left: clamp(20px, 4vw, $padding-large);
   padding-top: clamp(30px, 5vw, $padding-top);
 
-  .yellow-line {
-    width: 35px;
-    height: 4px;
-    background-color: $accent-color;
-    margin: 20px 0;
-  }
-
-  .text-1 { font-size: clamp(20px, 3vw, 35px); text-transform: uppercase; color: $text-white; font-weight: 500; }
-  .text-2 { font-size: clamp(12px, 2vw, 22px); text-transform: uppercase; color: $text-white; font-weight: 300; }
-  .text-3 { font-size: clamp(14px, 2vw, 21px); color: $text-white; font-weight: 400; }
-  .text-4 { font-size: clamp(12px, 1.8vw, 17px); color: $text-white; font-weight: 400; }
 
   .EXPERTISE {
     @include flex-center(row, flex-start, center);

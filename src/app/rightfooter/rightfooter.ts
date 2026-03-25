@@ -1,9 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReferenceComponent } from '../reference/reference';
+import { InterestsComponent } from '../interests/interests';
 
 @Component({
   selector: 'app-rightfooter',
-  imports: [CommonModule],
+  imports: [CommonModule, ReferenceComponent, InterestsComponent],
   standalone: true,
   templateUrl: './rightfooter.html',
   styleUrl: './rightfooter.scss',

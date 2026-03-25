@@ -1,0 +1,22 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { InterestsComponent } from './interests';
+
+describe('Interests', () => {
+  let component: InterestsComponent;
+  let fixture: ComponentFixture<InterestsComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [InterestsComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(InterestsComponent);
+    component = fixture.componentInstance;
+    await fixture.whenStable();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

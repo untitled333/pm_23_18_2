@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { EducationComponent } from '../education/education';
+import { ExpertiseComponent } from '../expertise/expertise';
+import { InfoComponent } from '../info/info';
 
 @Component({
   selector: 'app-leftfooter',
-  imports: [],
+  imports: [EducationComponent, ExpertiseComponent, InfoComponent],
   templateUrl: './leftfooter.html',
   styleUrl: './leftfooter.scss',
 })
