@@ -1,0 +1,22 @@
+<div>
+  @if (isVisible) {
+    <span class="text-1">EXPERTISE</span>
+  } @else {
+    <h1>No data</h1>
+  }
+
+  <div class="yellow-line"></div>
+
+  @if (isVisible) {
+    @for (skill of skills; track skill.skill) {
+      <div class="EXPERTISE">
+        <label>{{ skill.skill }}</label>
+        <input type="range" min="0" max="100" [value]="skill.level" class="slider" disabled>
+      </div>
+    }
+  }
+
+  @if (error) {
+    <p style="color:red">⚠️ {{ error }}</p>
+  }
+</div>

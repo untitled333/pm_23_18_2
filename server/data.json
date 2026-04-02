@@ -1,0 +1,29 @@
+{
+  "name": {
+    "firstName": "Mathew",
+    "lastName": "Smith",
+    "title": "Graphic & Web Designer"
+  },
+  "expertise": [
+    {
+      "skill": "Photoshop",
+      "level": 50
+    },
+    {
+      "skill": "Illustrator",
+      "level": 50
+    },
+    {
+      "skill": "Indesign",
+      "level": 50
+    },
+    {
+      "skill": "Word",
+      "level": 50
+    },
+    {
+      "skill": "Power Point",
+      "level": 50
+    }
+  ]
+}

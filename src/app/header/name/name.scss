@@ -1,0 +1,122 @@
+$primary-color: #242439;
+$accent-color: #f4cb00;
+
+.text-11, .text-12 {
+  font-size: 60px;
+  letter-spacing: 5px;
+  color: $primary-color;
+}
+
+.text-11 {
+  font-weight: 700;
+}
+
+.text-12 {
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+.text-15 {
+  font-size: 25px;
+  color: #1b1c1e;
+  font-weight: 400;
+  background-color: $accent-color;
+  border-radius: 6px;
+  padding: 0 5px;
+  display: inline-block;
+}
+
+.edit-btn {
+  margin-top: 12px;
+  margin-left: 150px;
+  background: none;
+  border: 2px solid $accent-color;
+  border-radius: 6px;
+  padding: 4px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: $accent-color;
+  }
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  .input-name {
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: $primary-color;
+    border: none;
+    border-bottom: 3px solid $accent-color;
+    outline: none;
+    background: transparent;
+    width: 220px;
+
+    &--light {
+      font-weight: 300;
+    }
+  }
+
+  .input-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: $primary-color;
+    border: none;
+    border-bottom: 2px solid $accent-color;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .btn-save {
+    background-color: $accent-color;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    color: $primary-color;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .btn-cancel {
+    background: none;
+    border: 2px solid $primary-color;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary-color;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($primary-color, 0.08);
+    }
+  }
+}

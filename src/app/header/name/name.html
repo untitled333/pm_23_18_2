@@ -1,0 +1,35 @@
+@if (isLoading) {
+  <h2>Завантаження...</h2>
+}
+
+@if (error) {
+  <h1>{{ error }}</h1>
+}
+
+@if (nameData && !isLoading && !isEditing) {
+  <h2>
+    <strong class="text-11">{{ nameData.firstName }}</strong>
+    <span class="text-12">{{ nameData.lastName }}</span>
+  </h2>
+
+  <div class="text-15">{{ nameData.title }}</div>
+
+  <button class="edit-btn" (click)="openEdit()">Редагувати</button>
+}
+
+@if (isEditing) {
+  <div class="edit-form">
+    <div class="form-row">
+      <input class="input-name" [(ngModel)]="formData.firstName" placeholder="Ім'я" />
+      <input class="input-name input-name--light" [(ngModel)]="formData.lastName" placeholder="Прізвище" />
+    </div>
+    <input class="input-title" [(ngModel)]="formData.title" placeholder="Посада" />
+
+    <div class="form-actions">
+      <button class="btn-save" (click)="save()" [disabled]="isSaving">
+        {{ isSaving ? 'Збереження...' : 'Зберегти' }}
+      </button>
+      <button class="btn-cancel" (click)="cancelEdit()">Скасувати</button>
+    </div>
+  </div>
+}

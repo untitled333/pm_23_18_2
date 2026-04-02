@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { EducationComponent } from '../education/education';
-import { ExpertiseComponent } from '../expertise/expertise';
-import { InfoComponent } from '../info/info';
+import { EducationComponent } from './education/education';
+import { ExpertiseComponent } from './expertise/expertise';
+import { InfoComponent } from './info/info';
 
 @Component({
   selector: 'app-leftfooter',
@@ -12,7 +12,7 @@ import { InfoComponent } from '../info/info';
 export class Leftfooter {
 
   idk1: boolean = true;
-  
+
   title1: string = "EDUCATION";
   text1: string = "ENTER YOUR MAJOR";
   text2: string = "Name Of Your University";

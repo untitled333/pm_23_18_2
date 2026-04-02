@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
 import {Header} from './header/header';
 import {Leftfooter} from './leftfooter/leftfooter';
 import {Rightfooter} from './rightfooter/rightfooter';

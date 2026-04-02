@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReferenceComponent } from '../reference/reference';
-import { InterestsComponent } from '../interests/interests';
+import { ReferenceComponent } from './reference/reference';
+import { InterestsComponent } from './interests/interests';
 
 @Component({
   selector: 'app-rightfooter',
@@ -42,7 +42,7 @@ export class Rightfooter {
   onArrowClick() {
     console.log("CLICK WORKS");
     this.toggleExperience.emit();
- 
+
   }
 
 }
