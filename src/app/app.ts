@@ -1,23 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {Header} from './header/header';
-import {Leftfooter} from './leftfooter/leftfooter';
-import {Rightfooter} from './rightfooter/rightfooter';
-
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, Header, Leftfooter, Rightfooter],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
-export class App {
-
-  showExperience = false;
-
-  toggleExperience() {
-    console.log("APP TOGGLE");
-    this.showExperience = !this.showExperience;
-  }
-}
+export class App {}

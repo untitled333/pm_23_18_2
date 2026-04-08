@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="form-wrapper">
+    <div class="form-header">
+      <span class="text-11">Реєстрація</span>
+      <span class="text-12">форма</span>
+      <div class="yellow-line"></div>
+      <span class="text-15">Реактивна форма</span>
+    </div>
+
+    <form [formGroup]="regForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <!-- Ім'я та Прізвище -->
+      <div class="form-row">
+        <div class="field-group">
+          <label class="field-label">Ім'я *</label>
+          <input class="input-name" type="text" formControlName="firstName" placeholder="Іван" />
+          <div class="error-msg" *ngIf="f['firstName'].invalid && f['firstName'].touched">
+            <span *ngIf="f['firstName'].errors?.['required']">Поле обов'язкове</span>
+            <span *ngIf="f['firstName'].errors?.['minlength']">Мінімум 2 символи</span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Прізвище *</label>
+          <input class="input-name input-name--light" type="text"
+                 formControlName="lastName" placeholder="Петренко" />
+          <div class="error-msg" *ngIf="f['lastName'].invalid && f['lastName'].touched">
+            <span *ngIf="f['lastName'].errors?.['required']">Поле обов'язкове</span>
+            <span *ngIf="f['lastName'].errors?.['minlength']">Мінімум 2 символи</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="field-group">
+        <label class="field-label">Email *</label>
+        <input class="input-title" type="email" formControlName="email"
+               placeholder="ivan@example.com" />
+        <div class="error-msg" *ngIf="f['email'].invalid && f['email'].touched">
+          <span *ngIf="f['email'].errors?.['required']">Поле обов'язкове</span>
+          <span *ngIf="f['email'].errors?.['email']">Введіть коректний email</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Країна *</label>
+        <select class="input-title" formControlName="country">
+          <option value="">Оберіть країну...</option>
+          <option value="ua">Україна</option>
+          <option value="pl">Польща</option>
+          <option value="de">Німеччина</option>
+          <option value="us">США</option>
+        </select>
+        <div class="error-msg" *ngIf="f['country'].invalid && f['country'].touched">
+          <span>Оберіть країну</span>
+        </div>
+      </div>
+
+      <div formGroupName="passwords">
+        <div class="field-group">
+          <label class="field-label">Пароль *</label>
+          <input class="input-title" type="password" formControlName="password"
+                 placeholder="Мін. 8 символів, велика літера, цифра" />
+          <div class="error-msg"
+               *ngIf="regForm.get('passwords.password')!.invalid &&
+                      regForm.get('passwords.password')!.touched">
+            <span *ngIf="regForm.get('passwords.password')!.errors?.['required']">Поле обов'язкове</span>
+            <span *ngIf="regForm.get('passwords.password')!.errors?.['pattern']">
+              Мін. 8 символів, велика літера та цифра
+            </span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Підтвердження паролю *</label>
+          <input class="input-title" type="password" formControlName="confirmPassword"
+                 placeholder="Повторіть пароль" />
+          <div class="error-msg"
+               *ngIf="regForm.get('passwords')!.errors?.['passwordMismatch'] &&
+                      regForm.get('passwords.confirmPassword')!.touched">
+            Паролі не співпадають
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" formControlName="agreeTerms" />
+          Погоджуюсь з умовами використання
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-save" type="submit"
+                [disabled]="regForm.invalid || isLoading">
+          {{ isLoading ? 'Відправка...' : 'Зареєструватись' }}
+        </button>
+        <button class="btn-cancel" type="button" (click)="resetForm()">Скинути</button>
+      </div>
+
+      <div class="server-response success" *ngIf="successMessage">{{ successMessage }}</div>
+      <div class="server-response error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    </form>
+  </div>
+</div>
