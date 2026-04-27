@@ -1,0 +1,73 @@
+<div class="auth-page">
+  <div class="auth-wrapper">
+
+    <div class="auth-tabs">
+      <button class="tab tab--active">Вхід</button>
+      <a class="tab" routerLink="/register">Реєстрація</a>
+    </div>
+
+    <div class="form-header">
+      <span class="text-big">Вхід</span>
+      <span class="text-big text-light">до системи</span>
+      <div class="yellow-line"></div>
+      <span class="text-sub">Авторизація користувача</span>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <div class="field-group">
+        <label class="field-label">Email *</label>
+        <input
+          class="input-field"
+          type="email"
+          formControlName="email"
+          placeholder="ivan@example.com"
+          autocomplete="email"
+        />
+        @if (f['email'].invalid && f['email'].touched) {
+          <div class="error-msg">
+            @if (f['email'].errors?.['required']) { <span>Поле обов'язкове</span> }
+            @if (f['email'].errors?.['email']) { <span>Введіть коректний email</span> }
+          </div>
+        }
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Пароль *</label>
+        <div class="input-wrap">
+          <input
+            class="input-field"
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="Введіть пароль"
+            autocomplete="current-password"
+          />
+          <button type="button" class="toggle-pw" (click)="togglePassword()">
+            {{ showPassword ? '🙈' : '👁️' }}
+          </button>
+        </div>
+        @if (f['password'].invalid && f['password'].touched) {
+          <div class="error-msg">
+            @if (f['password'].errors?.['required']) { <span>Поле обов'язкове</span> }
+            @if (f['password'].errors?.['minlength']) { <span>Мінімум 8 символів</span> }
+          </div>
+        }
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-primary" type="submit" [disabled]="isLoading">
+          {{ isLoading ? 'Вхід...' : 'Увійти' }}
+        </button>
+      </div>
+
+      @if (errorMessage) {
+        <div class="server-response error">{{ errorMessage }}</div>
+      }
+
+      <p class="switch-link">
+        Немає акаунту? <a routerLink="/register">Зареєструватись</a>
+      </p>
+
+    </form>
+  </div>
+</div>

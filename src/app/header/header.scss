@@ -7,13 +7,11 @@ $font-body: "Open Sans", sans-serif;
 $padding-large: 50px;
 $padding-medium: 71px;
 
-
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .photo {
   width: 86.5%;
@@ -27,8 +25,8 @@ $padding-medium: 71px;
   padding-left: $padding-large;
   padding-top: 90px;
 
-
-  .text-11, .text-12 {
+  .text-11,
+  .text-12 {
     font-size: 60px;
     letter-spacing: 5px;
     color: $primary-color;
@@ -37,15 +35,78 @@ $padding-medium: 71px;
   .text-11 { font-weight: 700; }
   .text-12 { font-weight: 300; padding-left: 10px; }
 
-
   .text-15 {
     font-size: 25px;
     color: #1b1c1e;
     font-weight: 400;
     background-color: $accent-color;
     border-radius: 6px;
-    padding: 0px 5px;
+    padding: 0 5px;
     display: inline-block;
+  }
+}
+
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: transparent;
+  border: 2px solid $accent-color;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: $font-heading;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &__icon { font-size: 16px; line-height: 1; }
+
+  &__text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &:hover { background: $accent-color; }
+  &:active { transform: scale(0.97); }
+}
+
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: transparent;
+  border: 2px solid #f4cb00;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #242439;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s;
+
+  &__icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &:hover {
+    background: #f4cb00;
+    color: #242439;
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 
@@ -53,7 +114,6 @@ $padding-medium: 71px;
   @include flex-center;
   flex-direction: column;
 }
-
 
 @media (max-width: 1400px) {
   .photo { width: 89%; margin-left: 57px; }
@@ -71,7 +131,6 @@ $padding-medium: 71px;
   .head-p .text-14, .head-p .text-15 { font-size: 18px; }
 }
 
-
 @media (max-width: 992px) {
   .photo { width: 100%; margin-left: 0; }
   .head-p { padding-left: 45px; padding-top: 40px; padding-bottom: 30px; }
@@ -80,7 +139,6 @@ $padding-medium: 71px;
   .head-p .text-14, .head-p .text-15 { font-size: 16px; }
 }
 
-
 @media (max-width: 640px) {
   .photo { width: 100%; margin-left: 0; }
   .head-p { padding-left: 40px; padding-top: 30px; padding-bottom: 30px; }
@@ -88,7 +146,6 @@ $padding-medium: 71px;
   .head-p .text-13 { font-size: 20px; }
   .head-p .text-14, .head-p .text-15 { font-size: 14px; }
 }
-
 
 @media (max-width: 480px) {
   .photo { width: 100%; margin-left: 0; }

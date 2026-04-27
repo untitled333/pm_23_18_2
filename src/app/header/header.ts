@@ -1,6 +1,8 @@
-import { Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserProfile } from './user-profile/user-profile';
 import { NameComponent } from './name/name';
+import {AuthService} from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,16 +11,22 @@ import { NameComponent } from './name/name';
   styleUrl: './header.scss',
 })
 export class Header {
+  private auth = inject(AuthService);
+  private router = inject(Router);
+  readonly isLoggedIn = this.auth.isLoggedIn;
 
-  isLoggedIn: boolean = true;
+  name: string = 'Mathew';
+  surname: string = 'Smith';
 
-  name: string = "Mathew";
-  surname: string = "Smith";
+  professions = ['Graphic', ' Web Designer'];
+  note: string = 'PROFILE';
 
-  professions = ["Graphic", " Web Designer"];
-  note: string = "PROFILE";
+  someinfo1: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,';
+  someinfo2: string = 'sed do eiusmod tempor incididunt ut labore et dolore';
+  someinfo3: string = 'magna aliqua incididunt.';
 
-  someinfo1: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,";
-  someinfo2: string = "sed do eiusmod tempor incididunt ut labore et dolore";
-  someinfo3: string = "magna aliqua incididunt.";
+  logout(): void {
+    this.auth.logout();
+    this.router.navigate(['/login']);
+  }
 }

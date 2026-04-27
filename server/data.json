@@ -1,9 +1,9 @@
 {
   "name": {
-    "firstName": "Христина",
-    "lastName": "Пиняга",
+    "firstName": "Lalala",
+    "lastName": "oievj",
     "title": "Graphic & Web Designer",
-    "email": "khrystyna.pyniaha.pm.2024@lpnu.ua",
+    "email": "KHRYSTYNA.PYNIAHA1@GMAIL.COM",
     "country": "ua"
   },
   "expertise": [
@@ -26,6 +26,35 @@
     {
       "skill": "Power Point",
       "level": 50
+    }
+  ],
+  "users": [
+    {
+      "id": 1777284188044,
+      "firstName": "llll",
+      "lastName": "aaa",
+      "email": "lll@gmail.com",
+      "country": "ua",
+      "password": "Maks1490",
+      "createdAt": "2026-04-27T10:03:08.044Z"
+    },
+    {
+      "id": 1777313087243,
+      "firstName": "Христина",
+      "lastName": "Пиняга",
+      "email": "afkacxell@gmail.com",
+      "country": "ua",
+      "password": "Untitledmeow1",
+      "createdAt": "2026-04-27T18:04:47.243Z"
+    },
+    {
+      "id": 1777313166911,
+      "firstName": "Lalala",
+      "lastName": "oievj",
+      "email": "KHRYSTYNA.PYNIAHA1@GMAIL.COM",
+      "country": "ua",
+      "password": "2tUYXUDBpnQ3sUS",
+      "createdAt": "2026-04-27T18:06:06.911Z"
     }
   ]
 }

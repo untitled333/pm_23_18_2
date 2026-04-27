@@ -1,20 +1,17 @@
 @if (isLoggedIn) {
-    <div class="text-13">{{note}}</div>
-}
-@else {
-    <h1>No data</h1>
+  <div class="text-13">{{ note }}</div>
+} @else {
+  <h1>No data</h1>
 }
 
 <div class="yellow-line"></div>
 
-
 @if (isLoggedIn) {
-    <div class="text-14">
-            {{someinfo1}} <br>
-            {{someinfo2}} <br>
-            {{someinfo3}}
-    </div>
+  <div class="text-14">
+    {{ someinfo1 }} <br>
+    {{ someinfo2 }} <br>
+    {{ someinfo3 }}
+  </div>
+} @else {
+  <h1>No data</h1>
 }
-@else {
-    <h1>No data</h1>
-            }

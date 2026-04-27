@@ -1,23 +1,29 @@
 <div class="row px-0 head-wrapper">
-    <div class="col-5 px-0">
-        <img src="img/image.png"  alt="" class="photo">
+  <div class="col-5 px-0">
+    <img src="img/image.png" alt="" class="photo">
+  </div>
+  <div class="col-7 px-0">
+    <div class="head-p">
+
+      <app-name></app-name>
+
+      @if (isLoggedIn()) {
+        <button class="btn-logout" (click)="logout()">
+          <span class="btn-logout__icon">⏻</span>
+          <span class="btn-logout__text">Вийти</span>
+        </button>
+      }
+
+      <br><br>
+
+      <app-user-profile
+        [isLoggedIn]="isLoggedIn()"
+        [note]="note"
+        [someinfo1]="someinfo1"
+        [someinfo2]="someinfo2"
+        [someinfo3]="someinfo3">
+      </app-user-profile>
 
     </div>
-    <div class="col-7 px-0">
-        <div class="head-p">
-
-          <app-name></app-name>
-
-            <br>
-            <br>
-            <br>
-            <app-user-profile
-                [isLoggedIn]="isLoggedIn"
-                [note]="note"
-                [someinfo1]="someinfo1"
-                [someinfo2]="someinfo2"
-                [someinfo3]="someinfo3">
-            </app-user-profile>
-        </div>
-    </div>
+  </div>
 </div>

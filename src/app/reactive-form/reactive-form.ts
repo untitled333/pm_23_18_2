@@ -1,31 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { RegistrationService } from '../services/registration.service';
 import { passwordMatchValidator } from '../validators/password-match.validator';
 
 @Component({
   selector: 'app-reactive-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './reactive-form.html',
   styleUrls: ['./reactive-form.scss'],
 })
 export class ReactiveFormComponent implements OnInit {
+  private fb = inject(FormBuilder);
+  private regService = inject(RegistrationService);
+  private router = inject(Router);
+
   regForm!: FormGroup;
   isLoading = false;
   successMessage = '';
   errorMessage = '';
 
-  constructor(
-    private fb: FormBuilder,
-    private regService: RegistrationService,
-    private router: Router,
-  ) {}
-
-  //Коли компонент завантажується, за допомогою FormBuilder створюється структура форми regForm. 
-  // Для кожного поля прописані правила (Validators):
   ngOnInit(): void {
     this.regForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
@@ -43,12 +39,10 @@ export class ReactiveFormComponent implements OnInit {
     });
   }
 
-  //геттер, який дозволяє коротко звертатися до полів форми в HTML 
   get f() {
     return this.regForm.controls;
   }
 
-  //спрацьовує при натисканні зареєструватися
   onSubmit(): void {
     if (this.regForm.invalid) {
       this.regForm.markAllAsTouched();
@@ -59,15 +53,14 @@ export class ReactiveFormComponent implements OnInit {
     this.successMessage = '';
     this.errorMessage = '';
 
-    const { passwords, ...rest } = this.regForm.value;
+    const { passwords, agreeTerms, ...rest } = this.regForm.value;
     const payload = { ...rest, password: passwords.password };
 
-
-    //запит до сервера 
     this.regService.register(payload).subscribe({
       next: () => {
         this.isLoading = false;
-        this.router.navigate(['/cv']);
+        this.successMessage = 'Реєстрацію завершено! Тепер увійдіть в систему.';
+        setTimeout(() => this.router.navigate(['/login']), 1500);
       },
       error: (err) => {
         this.isLoading = false;
@@ -75,7 +68,7 @@ export class ReactiveFormComponent implements OnInit {
       },
     });
   }
-//очищення заповненої форми 
+
   resetForm(): void {
     this.regForm.reset();
     this.successMessage = '';
