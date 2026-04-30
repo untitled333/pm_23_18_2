@@ -21,7 +21,6 @@ const STORAGE_KEY = 'auth_user';
 export class AuthService {
   private readonly apiUrl = 'http://localhost:3000/api';
 
-  // Angular 19 signals
   private _user = signal<AuthUser | null>(this.loadFromStorage());
   readonly user = this._user.asReadonly();
   readonly isLoggedIn = computed(() => this._user() !== null);

@@ -1,27 +1,35 @@
 <div class="left-bg">
 
-  <app-education
-    [isVisible]="idk1"
-    [title]="title1"
-    [major]="text1"
-    [university]="text2"
-    [years1]="years1"
-    [years2]="years2">
-  </app-education>
+  @defer (on idle) {
+    <app-education
+      [isVisible]="idk1"
+      [title]="title1"
+      [major]="text1"
+      [university]="text2"
+      [years1]="years1"
+      [years2]="years2">
+    </app-education>
+  } @placeholder {
+    <div class="placeholder">Loading Education...</div>
+  }
 
-    <br>
-    <br>
-    <br>
-    <br>
+  <br><br><br><br>
 
-  <app-expertise></app-expertise>
+  @defer (on viewport) {
+    <app-expertise></app-expertise>
+  } @placeholder {
+    <div class="placeholder" style="min-height: 150px;">Loading Expertise...</div>
+  }
 
-    <br>
-    <br>
+  <br><br>
 
-  <app-info
-    [isVisible]="idk3"
-    [info]="info">
-  </app-info>
+  @defer (on viewport; prefetch on idle) {
+    <app-info
+      [isVisible]="idk3"
+      [info]="info">
+    </app-info>
+  } @placeholder {
+    <div class="placeholder">Loading Info...</div>
+  }
 
 </div>

@@ -10,8 +10,8 @@ import { InterestsComponent } from './interests/interests';
   templateUrl: './rightfooter.html',
   styleUrl: './rightfooter.scss',
 })
-export class Rightfooter {
 
+export class Rightfooter {
   showReferences: boolean = true;
   showInterests: boolean = true;
 
@@ -26,23 +26,19 @@ export class Rightfooter {
       position: "Director Marix Media Ltd.",
       phone: "+555 123 454"
     }
-];
+  ];
 
   interests = [
-  { name: "Travel", icon: "fas fa-plane" },
-  { name: "Music", icon: "fas fa-music" },
-  { name: "Writing", icon: "fas fa-pen-nib" },
-  { name: "Chess", icon: "fas fa-chess" }
-];
+    { name: "Travel", icon: "fas fa-plane" },
+    { name: "Music", icon: "fas fa-music" },
+    { name: "Writing", icon: "fas fa-pen-nib" },
+    { name: "Chess", icon: "fas fa-chess" }
+  ];
 
   @Input() showExperience: boolean = false;
-
   @Output() toggleExperience = new EventEmitter<void>();
 
   onArrowClick() {
-    console.log("CLICK WORKS");
     this.toggleExperience.emit();
-
   }
-
 }

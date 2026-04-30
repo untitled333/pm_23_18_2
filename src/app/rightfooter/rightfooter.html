@@ -1,68 +1,65 @@
 <div class="right-bg">
 
-    <div class="experience-section">
-        <span class="text-5">WORK EXPERIENCE</span>
+  <div class="experience-section">
+    <span class="text-5">WORK EXPERIENCE</span>
 
-        <i 
-        class="arrow fa-solid fa-chevron-right"
-        (click)="onArrowClick()"
-        [class.rotated]="showExperience">
-        </i>
+    <i
+      class="arrow fa-solid fa-chevron-right"
+      (click)="onArrowClick()"
+      [class.rotated]="showExperience">
+    </i>
 
-        <div class="yellow-line"></div>
+    <div class="yellow-line"></div>
 
-        @if (showExperience) {
-
-
-        <div class="content-block">
-            <div class="text-6">Enter Job Position Here</div>
-            <div>
-                <span class="text-8">Present</span>
-                <span class="text-7">Company Name/Location</span>
-            </div>
-            <div class="text-9">
-                Lorem ipsum dolor sit amet, this is a thena consectetur <br>
-                adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            </div>
+    @if (showExperience) {
+      <div class="content-block">
+        <div class="text-6">Enter Job Position Here</div>
+        <div>
+          <span class="text-8">Present</span>
+          <span class="text-7">Company Name/Location</span>
         </div>
-
-        <br>
-        <br>
-
-        <div class="content-block">
-            <div class="text-6">Enter Job Position Here</div>
-            <div>
-                <span class="text-10">2015-2017</span>
-                <span class="text-7">Company Name/Location</span>
-            </div>
-            <div class="text-9">
-                Lorem ipsum dolor sit amet, this is a thena consectetur <br>
-                adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            </div>
+        <div class="text-9">
+          Lorem ipsum dolor sit amet, this is a thena consectetur <br>
+          adipisicing elit, sed do eiusmod tempor incididunt ut labore et
         </div>
+      </div>
 
-        }
+      <br><br>
 
-    </div>
+      <div class="content-block">
+        <div class="text-6">Enter Job Position Here</div>
+        <div>
+          <span class="text-10">2015-2017</span>
+          <span class="text-7">Company Name/Location</span>
+        </div>
+        <div class="text-9">
+          Lorem ipsum dolor sit amet, this is a thena consectetur <br>
+          adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        </div>
+      </div>
+    }
+  </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
+  <br><br><br><br>
 
-      <app-reference
-        [isVisible]="showReferences"
-        [references]="references">
-      </app-reference>
+  @defer (on viewport; prefetch on idle) {
+    <app-reference
+      [isVisible]="showReferences"
+      [references]="references">
+    </app-reference>
+  } @placeholder {
+    <div style="min-height: 100px;">Loading References...</div>
+  }
 
-    <br>
-    <br>
-    <br>
-    
-  <app-interests
-    [isVisible]="showInterests"
-    [interests]="interests">
-  </app-interests>
+  <br><br><br>
 
-    
+  @defer (on viewport) {
+    <app-interests
+      [isVisible]="showInterests"
+      [interests]="interests">
+    </app-interests>
+  } @placeholder {
+    <div style="min-height: 100px;">Loading Interests...</div>
+  }
+
 </div>
